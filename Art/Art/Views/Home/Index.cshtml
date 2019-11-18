@@ -1,0 +1,176 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="shortcut icon" src="~/images/favicon.ico" />
+<style>
+    body {
+        background-color: black;
+        background-repeat: no-repeat;
+        color: white;
+        text-shadow: 1px 1px #000000;
+    }
+</style>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="~/images/image1.jpg" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                @*<p>
+                        Learn about our Art Club !
+                        <a class="btn btn-default">
+                            Learn More
+                        </a>
+                    </p>*@
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/image2.jpg" alt="Visual Studio" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                @*<p>
+                        All you need to know about us.
+                        <a class="btn btn-default" href="https://localhost:44373/">
+                            Learn More
+                        </a>
+                    </p>*@
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/image3.jpg" alt="Microsoft Azure" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                @*<p>
+                        Learn how to use our App.
+                        <a class="btn btn-default" href="https://localhost:44373/">
+                            Learn More
+                        </a>
+                    </p>*@
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/image4.jpg" alt="Microsoft Azure" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/image5.jpg" alt="Microsoft Azure" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/image6.jpg" alt="Microsoft Azure" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<div>
+    <h2>
+        Welcome to ArtClub! Check our future @Html.ActionLink("events", "Index", "Events") !
+    </h2>
+    <br />
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <h2>News</h2>
+        <ul>
+            <li> @Html.ActionLink("Most recent news related to ArtClub", "Index", "Events")</li>
+            <li> @Html.ActionLink("Did you see our new theme?", "Index", "Events")</li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>How to</h2>
+        <ul>
+            <li> @Html.ActionLink("How to contact us.", "Contact", "Home")</li>
+            <li> @Html.ActionLink("How to create an event.", "Create", "Events")</li>
+            <li> @Html.ActionLink("How to see invoices.", "Index", "Invoices")</li>
+            <li> @Html.ActionLink("Request an event.", "Create", "Events")</li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>Overview</h2>
+        <ul>
+
+            <li> @Html.ActionLink("All you need to know about ArtClub.", "About", "Home")</li>
+            <li> @Html.ActionLink("How ArtClub.App started and grew.", "About", "Home")</li>
+            <li> @Html.ActionLink("Fees and Invoices.", "Index", "Invoices")</li>
+            <li> @Html.ActionLink("ArtClub.App Security.", "About", "Home")</li>
+            <li> @Html.ActionLink("Read more on the documentation site.", "About", "Home")</li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>Join us</h2>
+        <ul>
+            <li> @Html.ActionLink("How to join our team.", "Contact", "Home")</li>
+        </ul>
+    </div>
+</div>
+<h2>
+    ArtClub
+</h2>
+
+<h2>
+    Are you interested in arts?
+    See our
+    @Html.ActionLink("events", "Index", "Events")
+</h2>
+<h2>
+    About us..
+    <br />
+</h2>
+The Arts Club Company is one of largest company which supports music and people passioned about art.<br />
+Now in its 9th season, the Arts Club offers professional live theatre at three venues, as well as on tour.<br />
+<br />
+<div class="item">
+    <img src="~/images/image2.jpg" alt="Visual Studio" class="img-responsive" />
+</div>
+
+<h2>
+    About music..
+    <br />
+</h2>
+Music affects you in many ways; however, it primarily affects your brain, through which the rest of your body can be affected. Music is an excellent therapeutic tool for the brain, because it activates so many parts of it. Music’s pitch, rhythm, meter and timbre are processed in both the left and right hemispheres of the brain. Listening to music triggers the areas of the brain that have to do with spatial reasoning. Music can even alter the brain if it is studied from a young age.
+<br />
+<br />
+Music is the art of expressing ideas and emotions in significant sound forms by using the elements of rhythm, melody and harmony through voices, instruments, or both. Music plays a great role in everyone’s life. It keeps us busy in spare time and makes our life peaceful. Generally students get some task on the music topic especially to write essay. We have provided below very simple and easy essay on music to help students in completing their task.
+<br />
+<div class="item">
+    <img src="~/images/image3.jpg" alt="Visual Studio" class="img-responsive" />
+</div>
+
+Music plays an integral and essential role in our life. There are various types of music which we can enjoy according to our need ad requirement. Some of us are used to of listening music during the study time, playing indoor or outdoor game and other moments.
+
+However, everyone wants to listen music in their spare time to get some enjoyment and relief their mind. Listening slow sound music gives us relief and peace and makes us healthy mentally and spiritually. It helps us to get prevented from the mental and emotional problems all through the life. I love music a lot listen always.
+<br />
+<br />
+Music is sound, composed in certain rhythms to express people’s feelings or to transfer certain feelings. Dance is physical movement also used to express joy or other intense feelings. It can be anything from ballet to break-dance. In my life music is much more important than dance. I prefer experiencing most things inside my mind. I don’t need psychical movement to experience joy. Sometimes I use music to escape from reality, there is nothing I love to do more than listen to certain types of music that relates to my feelings at that moment. When I am a little bit down, listening to music with messages I am familiar with, is in a certain way comforting for me. As a child, I started playing the guitar. Sometimes when I feel creative I get my guitar and start playing. It is very satisfactory for me to listen to music I make myself. It empties my mind and gives me some kind of satisfied feeling. When I am, for example, in a bar enjoying music, I don’t feel the urge to move my body. That’s why in this essay I will be focusing on music much more than on dance.
+<br />
+I always have music playing around me. There are a  lot of different kinds of music I listen to. Sometimes I listen to music for the lyrics, sometimes just for the hypnotizing beat. For example in the car, I like to listen to instrumental music, known as “Minimal” This kind of music makes me drive easier and it keeps me focused for a longer period of time. When I’m alone, studying, I prefer listening to instrumental classical music.  That music has some kind of calmness and it has no distracting lyrics, so I can focus on my study work much better. Overall, my choice of music depends on what mood I am in.
+
+<br />
+<br />
+<h2>
+    About art..
+    <br />
+</h2>
+Art is a form of human expression. Art can be seen as the artist sleight of hand on his mood.  Art is in various media from posters to public wall of which we call “graffiti”. Art is elusive as the use of colors shapes and the surface used adds a new dimension. Art portrays various ideas, feelings such as triumph, love, happiness, sorrow and boredom in loss to mention a few. Art is beauty and creativity.  During man’s evolution art has progressed over in its most primitive state up to its most modernized versions today.
+<br />
+History shows that art has been used as a major tool for communication. Cavemen did art on their walls using unsophisticated and blunt tools. The indigenous people of our country, the aborigines such as Albert Namatjira…
+<br />
+<div class="item">
+    <img src="~/images/image6.jpg" alt="Visual Studio" class="img-responsive" />
+</div>

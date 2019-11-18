@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Art.Models.Events>
+
+@{
+    ViewData["Title"] = "Events";
+}
+<style>
+    body {
+        background-image: url("/Images/piano_wallpaper.jpg");
+        background-repeat: no-repeat;
+        color: white;
+        text-shadow: 1px 1px #000000;
+    }
+</style>
+
+<h2>Events</h2>
+<div style="background:url('');"  >
+</div>
+<p>
+    Creating an event costs 30$.
+    <a asp-action="Create"> Create Event.</a>
+    <br/>
+    See all @Html.ActionLink("invoices", "Index", "Invoices").
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Place)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tag)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Place)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tag)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdEvent">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdEvent">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdEvent">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

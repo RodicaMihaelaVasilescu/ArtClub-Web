@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Art.Models.Invoice>
+
+@{
+    ViewData["Title"] = "Invoices";
+}
+<style>
+    body {
+        background-image: url("/Images/invoiceImage.jpg");
+        background-repeat: no-repeat;
+        color: white;
+        text-shadow: 1px 1px #000000;
+    }
+</style>
+<h2>Invoices</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FkIdEventNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkIdEventNavigation.EventName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)$
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdInvoice">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdInvoice">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdInvoice">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,55 @@
+﻿@model Art.Models.Events
+
+@{
+    ViewData["Title"] = "Details";
+}
+<style>
+    body {
+        background-image: url("/Images/piano_wallpaper.jpg");
+        background-repeat: no-repeat;
+        color: white;
+        text-shadow: 1px 1px #000000;
+    }
+</style>
+<h2>Details</h2>
+
+<div>
+    <h4>Events</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EventName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Place)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Place)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tag)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tag)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdEvent">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
