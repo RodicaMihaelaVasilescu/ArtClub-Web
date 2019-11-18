@@ -18,6 +18,7 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
+[Cc]onnectionString.txt
 
 # Visual Studio cache/options directory
 
