@@ -29,7 +29,7 @@ namespace Art.Models
             {
                 // #warning To protect potentially sensitive information in your connection string, you should move it out of source code.
                 // See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(File.ReadAllText(@"..\..\Art\Art\ConnectionString.txt"));
+                optionsBuilder.UseSqlServer(File.ReadAllText(@"..\..\Art\Art\ConnectionString\ConnectionString.txt"));
             }
         }
 
