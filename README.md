@@ -1,4 +1,8 @@
 # ArtClub-Web
 ASP.NET Core
 
-![alt text](Preview/Homepage.gif)
+## Homepage
+![alt text](Preview/Homepage.png)
+
+## Register
+![alt text](Preview/Register.png)
