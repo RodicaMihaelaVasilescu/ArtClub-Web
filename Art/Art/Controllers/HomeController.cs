@@ -35,6 +35,12 @@ namespace Art.Controllers
 
             return View();
         }
+        public IActionResult Administration()
+        {
+            ViewData["Message"] = "Hi, admin!";
+
+            return View();
+        }
 
         public IActionResult Privacy()
         {

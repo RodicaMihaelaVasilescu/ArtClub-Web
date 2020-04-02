@@ -3,7 +3,14 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+<style>
+    body {
+        background-image: url("/Images/invoiceImage.jpg");
+        background-repeat: no-repeat;
+        color: white;
+        text-shadow: 1px 1px #000000;
+    }
+</style>
 <h2>Create</h2>
 
 <h4>Invoice</h4>
@@ -19,11 +26,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="FkGuidUser" class="control-label"></label>
-                <select asp-for="FkGuidUser" class ="form-control" asp-items="ViewBag.FkGuidUser"></select>
+                <select asp-for="FkGuidUser" class="form-control" asp-items="ViewBag.FkGuidUser"></select>
             </div>
             <div class="form-group">
                 <label asp-for="FkIdEvent" class="control-label"></label>
-                <select asp-for="FkIdEvent" class ="form-control" asp-items="ViewBag.FkIdEvent"></select>
+                <select asp-for="FkIdEvent" class="form-control" asp-items="ViewBag.FkIdEvent"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Cost" class="control-label"></label>

@@ -1,4 +1,6 @@
-﻿@model IEnumerable<Art.Models.Invoice>
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> userManager
+@model IEnumerable<Art.Models.Invoice>
 
 @{
     ViewData["Title"] = "Invoices";
@@ -32,24 +34,31 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkIdEventNavigation.EventName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InvoiceDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cost)$
-            </td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkIdEventNavigation.EventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InvoiceDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost)$
+                </td>
 
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdInvoice">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdInvoice">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdInvoice">Delete</a>
-            </td>
-        </tr>
-}
+                <td>
+                    @if (userManager.GetUserName(User) == "admin@artclub.com")
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.IdInvoice">Edit |</a>
+                    }
+                    <a asp-action="Details" asp-route-id="@item.IdInvoice">Details </a>
+                    @if (userManager.GetUserName(User) == "admin@artclub.com")
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.IdInvoice">| Delete</a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

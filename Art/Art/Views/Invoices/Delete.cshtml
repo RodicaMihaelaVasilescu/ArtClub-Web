@@ -3,7 +3,14 @@
 @{
     ViewData["Title"] = "Delete";
 }
-
+<style>
+    body {
+        background-image: url("/Images/invoiceImage.jpg");
+        background-repeat: no-repeat;
+        color: white;
+        text-shadow: 1px 1px #000000;
+    }
+</style>
 <h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
@@ -36,7 +43,7 @@
             @Html.DisplayFor(model => model.FkIdEventNavigation.EventName)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="IdInvoice" />
         <input type="submit" value="Delete" class="btn btn-default" /> |

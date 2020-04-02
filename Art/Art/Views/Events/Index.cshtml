@@ -1,24 +1,27 @@
-﻿@model IEnumerable<Art.Models.Events>
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> userManager
+@model IEnumerable<Art.Models.Events>
 
 @{
     ViewData["Title"] = "Events";
 }
 <style>
     body {
-        background-image: url("/Images/piano_wallpaper.jpg");
+        /*background-image: url("/Images/piano_wallpaper.jpg");*/
         background-repeat: no-repeat;
+        background-color: black;
         color: white;
         text-shadow: 1px 1px #000000;
     }
 </style>
 
 <h2>Events</h2>
-<div style="background:url('');"  >
+<div style="background:url('');">
 </div>
 <p>
     Creating an event costs 30$.
     <a asp-action="Create"> Create Event.</a>
-    <br/>
+    <br />
     See all @Html.ActionLink("invoices", "Index", "Invoices").
 </p>
 <table class="table">
@@ -62,9 +65,15 @@
                     @Html.DisplayFor(modelItem => item.Tag)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdEvent">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.IdEvent">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IdEvent">Delete</a>
+                    @if (userManager.GetUserName(User) == "admin@artclub.com")
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.IdEvent">Edit |</a>
+                    }
+                    <a asp-action="Details" asp-route-id="@item.IdEvent">Details</a>
+                    @if (userManager.GetUserName(User) == "admin@artclub.com")
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.IdEvent">| Delete</a>
+                    }
                 </td>
             </tr>
         }

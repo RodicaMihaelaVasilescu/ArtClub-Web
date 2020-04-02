@@ -1,5 +1,7 @@
 ﻿
 <!DOCTYPE html>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> userManager
 <link rel="shortcut icon" href="//.../content/images/apple-icon-114x114.png" />
 <html>
 <head>
@@ -38,6 +40,10 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Program">Program</a></li>
                     <li><a asp-area="" asp-controller="Events" asp-action="Index">Events</a></li>
                     <li><a asp-area="" asp-controller="Invoices" asp-action="Index">Invoices</a></li>
+                    @if (userManager.GetUserName(User) == "admin@artclub.com")
+                    {
+                        <li><a asp-area="" asp-controller="Home" asp-action="Administration">Administration</a></li>
+                    }
                 </ul>
                 <partial name="_LoginPartial" />
             </div>
